@@ -3,3 +3,5 @@ body{
     background: linear-gradient(to right, #a18cd1, #fbc2eb);
     font-family: "Poppins","sans-serif";
 }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

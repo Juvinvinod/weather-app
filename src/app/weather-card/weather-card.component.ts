@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-weather-card',
@@ -17,7 +18,7 @@ export class WeatherCardComponent implements OnInit {
     main:'',
     imageURL:''
   }
-  constructor(private readonly weatherService:WeatherService){}
+  constructor(private readonly weatherService:WeatherService,private snackbar:MatSnackBar){}
 
   ngOnInit(): void {
       this.loadData();
@@ -36,9 +37,16 @@ export class WeatherCardComponent implements OnInit {
         },
         error:(err)=>{
           console.log('Error while fetching data',err);
+          this.snackbar.open("ENTER VALID CITY",'Dismiss', {
+            duration: 5000,
+          });
           
         }
       })
+    }else{
+      this.snackbar.open("Please enter a city!!",'Dismiss', {
+        duration: 5000,
+      });
     }
   }
 }
