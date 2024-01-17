@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class WeatherService {
- URL = 'http://api.openweathermap.org/data/2.5/weather?q='
+ URL = 'https://api.openweathermap.org/data/2.5/weather?q='
   constructor(private readonly httpClientModule:HttpClient) {
    }
 
